@@ -20,6 +20,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
+        /**
+
         System.out.println("----------------Parte 1----------------");
 
         long total = 0;
@@ -78,79 +80,83 @@ public class App {
         }
         System.out.println("Media: " + total / totalDeTrocaSelecao.length);
 
-    //     System.out.println("----------------Parte 2----------------");
+        **/
 
-    //     // a
+         System.out.println("----------------Parte 2----------------");
 
-    //     // Cria um vetor de 10.000 posições
-    //     int[] vetor = new int[10_000];
+         // a
 
-    //     for (int i = 0; i < vetor.length; i++) {
-    //         vetor[i] = i;
-    //     }
+         // Cria um vetor de 10.000 posições
+         int[] vetor = new int[10_000];
 
-    //     // b
+         for (int i = 0; i < vetor.length; i++) {
+             vetor[i] = i;
+         }
 
-    //     // Gerar um valor aleatório
-    //     Random random = new Random();
-    //     int valorPesquisa = 0;
-    //     valorPesquisa = random.nextInt(11_000); // 11_000
+         // b
 
-    //     // Pesquisar o valor
-    //     boolean encontrado = false;
-    //     for (int i = 0; i < 10_000; i++) {
-    //         if (vetor[i] == valorPesquisa) {
-    //             System.out.println("Valor encontrado na posição: " + i);
-    //             encontrado = true;
-    //             break;
-    //         }
-    //     }
-    //     if (!encontrado) {
-    //         System.out.println("Valor não encontrado. Registrando posição 10001.");
-    //         System.out.println("Valor encontrado na posição: 10001");
-    //     }
+         // Gerar um valor aleatório
+         Random random = new Random();
+        int valorPesquisa = 0;
 
-    //     // c
 
-    //     // Criar um vetor de 1.000.000 posições
-    //     int[] resultados = new int[1_000_000]; // 1_000_000
+         // Pesquisar o valor
+         boolean encontrado = false;
+         for (int i = 0; i < 10_000; i++) {
+             valorPesquisa = random.nextInt(11_000); // 11_000
+             if (vetor[i] == valorPesquisa) {
+                 System.out.println("Valor encontrado na posição: " + i);
+                 encontrado = true;
+                 break;
+             }
+         }
+         if (!encontrado) {
+             System.out.println("Valor não encontrado. Registrando posição 10001.");
+             System.out.println("Valor encontrado na posição: 10001");
+         }
 
-    //     // Repetir 1.000.000 vezes
-    //     for (int j = 0; j < resultados.length; j++) {
-    //         int[] vetorRepeticao = new int[10000];
-    //         for (int i = 0; i < vetorRepeticao.length; i++) {
-    //             vetorRepeticao[i] = i + 1;
-    //         }
+         // c
 
-    //         // Pesquisar o valor
-    //         int contador = 0;
+         // Criar um vetor de 1.000.000 posições
+         int[] resultados = new int[30]; // 1_000_000
 
-    //         for (int i = 0; i < vetorRepeticao.length; i++) {
-    //             if (vetorRepeticao[i] == valorPesquisa) {
-    //                 contador++;
-    //             }
-    //         }
+         // Repetir 1.000.000 vezes
+         for (int j = 0; j < resultados.length; j++) {
+             int[] vetorRepeticao = new int[10000];
+             for (int i = 0; i < vetorRepeticao.length; i++) {
+                 vetorRepeticao[i] = i + 1;
+             }
 
-    //         // Armazenar o resultado
-    //         resultados[j] = contador;
-    //     }
+             // Pesquisar o valor
+             int contador = 0;
 
-    //     // d
+             for (int i = 0; i < vetorRepeticao.length; i++) {
+                 valorPesquisa = random.nextInt(11_000); // 11_000
+                 if (vetorRepeticao[i] == valorPesquisa) {
+                     contador++;
+                 }
+             }
 
-    //     // Agrupar os resultados e contar
+             // Armazenar o resultado
+             resultados[j] = contador;
+         }
 
-    //     int inicio = 0;
-    //     int soma = 0;
+         // d
 
-    //     for (int i = 0; i < resultados.length; i++) {
-    //         soma += resultados[i];
-    //         if ((i + 1) % 500 == 0) {
-    //             System.out.println(inicio + " - " + i + ": " + soma);
-    //             inicio = i + 1;
-    //             soma = 0;
-    //         }
-    //     }
-    //     System.out.println(inicio + " - " + (resultados.length - 1) + ": " + soma);
+         // Agrupar os resultados e contar
+
+         int inicio = 0;
+         int soma = 0;
+
+         for (int i = 0; i < resultados.length; i++) {
+             soma += resultados[i];
+             if ((i + 1) % 500 == 0) {
+                 System.out.println(inicio + " - " + i + ": " + soma);
+                 inicio = i + 1;
+                 soma = 0;
+             }
+         }
+         System.out.println(inicio + " - " + (resultados.length - 1) + ": " + soma);
 
      }
 
