@@ -88,7 +88,7 @@ public class App {
             vetor[i] = i;
         }
 
-        // b
+        // b oi
 
         Random random = new Random();
 
