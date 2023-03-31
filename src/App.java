@@ -20,117 +20,139 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        // System.out.println("----------------Parte 1----------------");
+        System.out.println("----------------Parte 1----------------");
 
-        // long total = 0;
+        long total = 0;
 
-        // for (int i = 0; i < 50; i++) { // 50 vezes
-        // List<Integer> gerado = geraVetor(100_000), a = gerado; // 100_000 numeros
-        // a = new LinkedList<>(gerado);
-        // Integer[] x = gerado.toArray(new Integer[0]), y = a.toArray(new Integer[0]);
-        // selection(x, i);
-        // bubble(y, i);
-        // }
-
-        // mergeSort(totalDeCompBolha);
-        // System.out.println("BOLHA:");
-        // System.out.println("Comparacoes Bolha:");
-        // System.out
-        // .println("Menor: " + totalDeCompBolha[0] + " / Maior:" +
-        // totalDeCompBolha[totalDeCompBolha.length - 1]);
-        // for (int i = 0; i < totalDeCompBolha.length; i++) {
-        // total = +totalDeCompBolha[i];
-        // }
-        // System.out.println("Média: " + total / totalDeCompBolha.length);
-        // total = 0;
-
-        // mergeSort(totalDeTrocaBolha);
-        // System.out.println("Trocas Bolha:");
-        // System.out.println(
-        // "Menor: " + totalDeTrocaBolha[0] + " / Maior: " +
-        // totalDeTrocaBolha[totalDeTrocaBolha.length - 1]);
-        // for (int i = 0; i < totalDeTrocaBolha.length; i++) {
-        // total = +totalDeTrocaBolha[i];
-        // }
-        // System.out.println("Media: " + total / totalDeTrocaBolha.length);
-        // total = 0;
-
-        // System.out.println("----------------------------------------");
-
-        // mergeSort(totalDeCompSelecao);
-        // System.out.println("SELEÇÃO:");
-        // System.out.println("Comparacoes Selecao:");
-        // System.out.println(
-        // "Menor: " + totalDeCompSelecao[0] + " / Maior: " +
-        // totalDeCompSelecao[totalDeCompSelecao.length - 1]);
-        // for (int i = 0; i < totalDeCompSelecao.length; i++) {
-        // total = +totalDeCompSelecao[i];
-        // }
-        // System.out.println("Media: " + total / totalDeCompSelecao.length);
-        // total = 0;
-
-        // mergeSort(totalDeTrocaSelecao);
-        // System.out.println("Trocas Selecao:");
-        // System.out.println("Menor: " + totalDeTrocaSelecao[0] + " / Maior: "
-        // + totalDeTrocaSelecao[totalDeTrocaSelecao.length - 1]);
-        // for (int i = 0; i < totalDeTrocaSelecao.length; i++) {
-        // total = +totalDeTrocaSelecao[i];
-        // }
-        // System.out.println("Media: " + total / totalDeTrocaSelecao.length);
-
-        System.out.println("----------------Parte 2----------------");
-
-        // a
-
-        int[] vetor = new int[10_000];
-
-        for (int i = 0; i < 10000; i++) {
-            vetor[i] = i;
+        for (int i = 0; i < 50; i++) { // 50 vezes
+        List<Integer> gerado = geraVetor(100_000), a = gerado; // 100_000 numeros
+        a = new LinkedList<>(gerado);
+        Integer[] x = gerado.toArray(new Integer[0]), y = a.toArray(new Integer[0]);
+        selection(x, i);
+        bubble(y, i);
         }
 
-        // b oi
-
-        Random random = new Random();
-
-        int valorPesquisa = 0;
-        valorPesquisa = random.nextInt(11_000); // 11_000
-
-        // Pesquisar o valor
-        for (int i = 1; i < 10_000; i++) { // 10_000
-            if (vetor[i] == valorPesquisa) {
-                System.out.println("Valor encontrado na posição: " + i);
-            }
+        mergeSort(totalDeCompBolha);
+        System.out.println("BOLHA:");
+        System.out.println("Comparacoes Bolha:");
+        System.out
+        .println("Menor: " + totalDeCompBolha[0] + " / Maior:" +
+        totalDeCompBolha[totalDeCompBolha.length - 1]);
+        for (int i = 0; i < totalDeCompBolha.length; i++) {
+        total = +totalDeCompBolha[i];
         }
+        System.out.println("Média: " + total / totalDeCompBolha.length);
+        total = 0;
 
-        // c
-
-        int[] resultados = new int[10_000]; // 10_000
-        int[] contadores = new int[21]; // 20 grupos de 500 resultados e um grupo
-        // para os demais
-
-        // Repetir 1 milhão de vezes
-        for (int j = 0; j < 11_000; j++) { // 1_000_000
-            int[] vetorRepeticao = new int[10_000]; // 10_000
-            for (int i = 0; i < 10000; i++) {
-                vetorRepeticao[i] = i;
-            }
+        mergeSort(totalDeTrocaBolha);
+        System.out.println("Trocas Bolha:");
+        System.out.println(
+        "Menor: " + totalDeTrocaBolha[0] + " / Maior: " +
+        totalDeTrocaBolha[totalDeTrocaBolha.length - 1]);
+        for (int i = 0; i < totalDeTrocaBolha.length; i++) {
+        total = +totalDeTrocaBolha[i];
         }
+        System.out.println("Media: " + total / totalDeTrocaBolha.length);
+        total = 0;
 
-        // Agrupar os resultados e contar
-        int inicio = 0;
-        int soma = 0;
-        for (int i = 0; i < 10000; i++) {
-            resultados[i] = 1; 
-            if(i !=0 && i % 500 == 0){
-                System.out.println(inicio + " - " + (i-1) + ": " + soma);
-                inicio = i;
-                soma = resultados[i];
-            } else {
-                soma += resultados[i];
-            }
+        System.out.println("----------------------------------------");
+
+        mergeSort(totalDeCompSelecao);
+        System.out.println("SELEÇÃO:");
+        System.out.println("Comparacoes Selecao:");
+        System.out.println(
+        "Menor: " + totalDeCompSelecao[0] + " / Maior: " +
+        totalDeCompSelecao[totalDeCompSelecao.length - 1]);
+        for (int i = 0; i < totalDeCompSelecao.length; i++) {
+        total = +totalDeCompSelecao[i];
         }
+        System.out.println("Media: " + total / totalDeCompSelecao.length);
+        total = 0;
 
-    }
+        mergeSort(totalDeTrocaSelecao);
+        System.out.println("Trocas Selecao:");
+        System.out.println("Menor: " + totalDeTrocaSelecao[0] + " / Maior: "
+        + totalDeTrocaSelecao[totalDeTrocaSelecao.length - 1]);
+        for (int i = 0; i < totalDeTrocaSelecao.length; i++) {
+        total = +totalDeTrocaSelecao[i];
+        }
+        System.out.println("Media: " + total / totalDeTrocaSelecao.length);
+
+    //     System.out.println("----------------Parte 2----------------");
+
+    //     // a
+
+    //     // Cria um vetor de 10.000 posições
+    //     int[] vetor = new int[10_000];
+
+    //     for (int i = 0; i < vetor.length; i++) {
+    //         vetor[i] = i;
+    //     }
+
+    //     // b
+
+    //     // Gerar um valor aleatório
+    //     Random random = new Random();
+    //     int valorPesquisa = 0;
+    //     valorPesquisa = random.nextInt(11_000); // 11_000
+
+    //     // Pesquisar o valor
+    //     boolean encontrado = false;
+    //     for (int i = 0; i < 10_000; i++) {
+    //         if (vetor[i] == valorPesquisa) {
+    //             System.out.println("Valor encontrado na posição: " + i);
+    //             encontrado = true;
+    //             break;
+    //         }
+    //     }
+    //     if (!encontrado) {
+    //         System.out.println("Valor não encontrado. Registrando posição 10001.");
+    //         System.out.println("Valor encontrado na posição: 10001");
+    //     }
+
+    //     // c
+
+    //     // Criar um vetor de 1.000.000 posições
+    //     int[] resultados = new int[1_000_000]; // 1_000_000
+
+    //     // Repetir 1.000.000 vezes
+    //     for (int j = 0; j < resultados.length; j++) {
+    //         int[] vetorRepeticao = new int[10000];
+    //         for (int i = 0; i < vetorRepeticao.length; i++) {
+    //             vetorRepeticao[i] = i + 1;
+    //         }
+
+    //         // Pesquisar o valor
+    //         int contador = 0;
+
+    //         for (int i = 0; i < vetorRepeticao.length; i++) {
+    //             if (vetorRepeticao[i] == valorPesquisa) {
+    //                 contador++;
+    //             }
+    //         }
+
+    //         // Armazenar o resultado
+    //         resultados[j] = contador;
+    //     }
+
+    //     // d
+
+    //     // Agrupar os resultados e contar
+
+    //     int inicio = 0;
+    //     int soma = 0;
+
+    //     for (int i = 0; i < resultados.length; i++) {
+    //         soma += resultados[i];
+    //         if ((i + 1) % 500 == 0) {
+    //             System.out.println(inicio + " - " + i + ": " + soma);
+    //             inicio = i + 1;
+    //             soma = 0;
+    //         }
+    //     }
+    //     System.out.println(inicio + " - " + (resultados.length - 1) + ": " + soma);
+
+     }
 
     // Algoritmo de ordenação SelectionSort
     public static void selection(Integer[] arr, int pos) {
