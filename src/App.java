@@ -18,6 +18,8 @@ public class App {
     static long[] totalDeTrocaSelecao = new long[50];
     static long[] totalDeCompSelecao = new long[50];
 
+    static int[] agrupamento = new int[10000];
+
     public static void main(String[] args) throws Exception {
 
         /**
@@ -87,7 +89,7 @@ public class App {
          // a
 
          // Cria um vetor de 10.000 posições
-         int[] vetor = new int[10_000];
+         int[] vetor = new int[10000], vetorPosicao = new int[10001];
 
          for (int i = 0; i < vetor.length; i++) {
              vetor[i] = i;
@@ -97,66 +99,33 @@ public class App {
 
          // Gerar um valor aleatório
          Random random = new Random();
-        int valorPesquisa = 0;
+        int valorPesquisa = 0, k=0;
 
 
          // Pesquisar o valor
          boolean encontrado = false;
-         for (int i = 0; i < 10_000; i++) {
-             valorPesquisa = random.nextInt(11_000); // 11_000
-             if (vetor[i] == valorPesquisa) {
-                 System.out.println("Valor encontrado na posição: " + i);
-                 encontrado = true;
-                 break;
-             }
+         for (int i = 0; i < 10000; i++) {
+             k++;
+             valorPesquisa = random.nextInt(11000)+1; // 11_000
+             vetorPosicao[k] = pesquisarNumero(valorPesquisa, vetor);
          }
-         if (!encontrado) {
-             System.out.println("Valor não encontrado. Registrando posição 10001.");
-             System.out.println("Valor encontrado na posição: 10001");
-         }
+
 
          // c
 
+        for (int i = 0; i < 10000; i++) {
+            agrupador(vetorPosicao[i]);
+        }
          // Criar um vetor de 1.000.000 posições
-         int[] resultados = new int[30]; // 1_000_000
+         int inicio = 1, fim = 500; // 1_000_000
 
          // Repetir 1.000.000 vezes
-         for (int j = 0; j < resultados.length; j++) {
-             int[] vetorRepeticao = new int[10000];
-             for (int i = 0; i < vetorRepeticao.length; i++) {
-                 vetorRepeticao[i] = i + 1;
-             }
-
-             // Pesquisar o valor
-             int contador = 0;
-
-             for (int i = 0; i < vetorRepeticao.length; i++) {
-                 valorPesquisa = random.nextInt(11_000); // 11_000
-                 if (vetorRepeticao[i] == valorPesquisa) {
-                     contador++;
-                 }
-             }
-
-             // Armazenar o resultado
-             resultados[j] = contador;
+         for (int j = 0; j < 21; j++) {
+             System.out.println( inicio+ " - " + fim + ": " + agrupamento[j]);
+             inicio = inicio + 500;
+             fim = fim + 500;
          }
-
-         // d
-
-         // Agrupar os resultados e contar
-
-         int inicio = 0;
-         int soma = 0;
-
-         for (int i = 0; i < resultados.length; i++) {
-             soma += resultados[i];
-             if ((i + 1) % 500 == 0) {
-                 System.out.println(inicio + " - " + i + ": " + soma);
-                 inicio = i + 1;
-                 soma = 0;
-             }
-         }
-         System.out.println(inicio + " - " + (resultados.length - 1) + ": " + soma);
+        System.out.println( 10501+ " - " + 11000 + ": " + 0);
 
      }
 
@@ -272,4 +241,112 @@ public class App {
             vetor[i] = novoVetor[pos];
         }
     }
+
+
+
+        static int pesquisarNumero(int x, int [] vetor) {
+            int cont = 0;
+            for (cont = 0; cont < vetor.length; cont++) {
+                if (vetor[cont] == x) {
+                    return cont;
+                }
+            }
+            return 10001;
+        }
+
+
+
+    static void agrupador(int posicao){
+        int num = posicao;
+
+        if (num >= 1 && num <= 500) {
+            agrupamento[0] =+ num;
+        }
+
+        if (num >= 501 && num <= 1000) {
+            agrupamento[1] =+ num;
+        }
+
+        if (num >= 1001 && num <= 1500) {
+            agrupamento[2] =+ num;
+        }
+
+        if (num >= 1501 && num <= 2000) {
+            agrupamento[3] =+ num;
+        }
+
+        if (num >= 2001 && num <= 2500) {
+            agrupamento[4] =+ num;
+        }
+
+        if (num >= 2501 && num <= 3000) {
+            agrupamento[5] =+ num;
+        }
+
+        if (num >= 3001 && num <= 3500) {
+            agrupamento[6] =+ num;
+        }
+
+        if (num >= 3501 && num <= 4000) {
+            agrupamento[7] =+ num;
+        }
+
+        if (num >= 4001 && num <= 4500) {
+            agrupamento[8] =+ num;
+        }
+
+        if (num >= 4501 && num <= 5000) {
+            agrupamento[9] =+ num;
+        }
+
+        if (num >= 5001 && num <= 5500) {
+            agrupamento[10] =+ num;
+        }
+
+        if (num >= 5501 && num <= 6000) {
+            agrupamento[11] =+ num;
+        }
+
+        if (num >= 6001 && num <= 6500) {
+            agrupamento[12] =+ num;
+        }
+
+        if (num >= 6501 && num <= 7000) {
+            agrupamento[13] =+ num;
+        }
+
+        if (num >= 7001 && num <= 7500) {
+            agrupamento[14] =+ num;
+        }
+
+        if (num >= 7501 && num <= 8000) {
+            agrupamento[15] =+ num;
+        }
+
+        if (num >= 8001 && num <= 8500) {
+            agrupamento[16] =+ num;
+        }
+
+        if (num >= 8501 && num <= 9000) {
+            agrupamento[17] =+ num;
+        }
+
+        if (num >= 9001 && num <= 9500) {
+            agrupamento[18] =+ num;
+        }
+
+        if (num >= 9501 && num <= 10000) {
+            agrupamento[19] =+ num;
+        }
+
+        if (num >= 10001 && num <= 10500) {
+            agrupamento[20] =+ num;
+        }
+
+        if(num >= 10501 && num <= 11000){
+            //print não tem
+        }
+
+    }
 }
+
